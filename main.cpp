@@ -47,6 +47,12 @@ testFixture3()
   return make_tuple("xyz", "xzyxz", 3);
 }
 
+tuple<string, string, int>
+testFixture4()
+{
+  return make_tuple("abcde", "abce", 2);
+}
+
 void test1()
 {
   auto f = testFixture1();
@@ -77,10 +83,21 @@ void test3()
   cout << "result: " << to_string(result) << endl;
 }
 
+void test4()
+{
+  auto f = testFixture4();
+  auto s = get<0>(f);
+  auto t = get<1>(f);
+  cout << "Test 1 - exepct to see " << to_string(get<2>(f)) << endl;
+  auto result = Solution::shortestWay(get<0>(f), get<1>(f));
+  cout << "result: " << to_string(result) << endl;
+}
+
 main()
 {
   test1();
   test2();
   test3();
+  test4();
   return 0;
 }
