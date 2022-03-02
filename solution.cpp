@@ -50,8 +50,10 @@ int Solution::shortestWay(string source, string target)
   while (i < T)
   {
     if (source[j] == target[i])
+    {
       /* found a match; reset the skips */
       skips = 0, i++;
+    }
     else
     {
       skips++;
@@ -64,7 +66,12 @@ int Solution::shortestWay(string source, string target)
     }
 
     j++;
-    /*  */
+    /*produce only one subsequence for each scan of the S
+      - this will make sure the subsequence produced is
+        the longest, which in turn will guarantee the
+        min number of subsequences used to form the
+        target
+    */
     if (j == S || i == T)
       result++, j = 0;
   }

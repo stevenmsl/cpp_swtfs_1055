@@ -50,7 +50,7 @@ testFixture3()
 tuple<string, string, int>
 testFixture4()
 {
-  return make_tuple("abcde", "abce", 2);
+  return make_tuple("abcde", "abce", 1);
 }
 
 void test1()
